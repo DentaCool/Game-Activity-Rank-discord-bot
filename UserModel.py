@@ -1,8 +1,12 @@
 class Game:
-    def __init__(self, name, time):
+    def __init__(self, name, time, exp_multiplayer=1.0):
         self.name = name
         self.time = time
         self.top_time = time
+        self.exp_multiplayer = exp_multiplayer
+
+    def update_time(self, time):
+        pass
 
     def to_dict(self):
         # TODO: if dict key==Game.name, how to easily convert Game obj to dict/json?
@@ -37,5 +41,5 @@ class UserData:
     def to_json(self):
         pass
 
-    def to_dict(self):
-        pass
+    def to_dict(self) -> dict:
+        return self.__dict__
